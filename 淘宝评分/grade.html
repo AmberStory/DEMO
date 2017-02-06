@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>评分系统</title>
+		<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+			#A{
+				height: 50px;
+				font-size: 0;
+				background-color: #f0e0f0;
+				/*overflow: hidden;*/
+				padding: 1px;
+			}
+			#B{
+				margin-top: 14px;
+				height: 21px;
+				/*border: 1px solid red;*/
+
+				/*padding: 14px;*/
+
+			}
+			#A span{
+				/*margin-top: 12px;*/   /*span属于行内元素，不能设置高*/
+				vertical-align: middle;
+				font-size: 16px;
+				/*width: 150px;
+				height: 150px;*/
+				/*background-color: green;*/
+				margin-right: 10px;
+
+			}
+			#A img{
+				/*height: 17px;*/
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="A">
+			<div id="B">
+				<span>商品评价</span>
+				<img src="image/general.png">
+				<img src="image/general.png">
+				<img src="image/general.png">
+				<img src="image/general.png">
+				<img src="image/general.png">
+			</div>
+		</div>
+	</body>
+	<script>
+		window.onload = function(){
+			// console.log(1);
+			var Oimg = document.getElementsByTagName('img');
+			var i = 0;
+			var j = 0;
+			var flag = true;
+			var cur = 0; 
+			var tag=0;
+
+			for(i=0;i<Oimg.length;i++){
+				Oimg[i].tag = i;
+				Oimg[i].onmouseover = function(){
+					for(j=0;j<=this.tag;j++){  
+						// this.tag换成Oimg[i].tag试一试
+						if(this.tag<2){
+							Oimg[j].src = "image/bad.png";
+						}
+						else{
+							Oimg[j].src = "image/good.png";
+						}
+						for (i=this.tag+1;i <Oimg.length;i++) {
+							Oimg[i].src = "image/general.png";
+						}
+					}
+					for(i=0;i<Oimg.length;i++){
+						Oimg[i].onmouseout = out;
+					}
+				}
+				Oimg[i].onclick = function(){
+					for(j=0;j<=this.tag;j++){
+						if(this.tag<2){
+							Oimg[j].src = "image/bad.png";
+						}
+						else{
+							Oimg[j].src = "image/good.png"
+						}
+						tag=1;
+						cur = this.tag;
+						Oimg[j].onmouseout = null;
+					}
+				}
+
+
+					Oimg[i].onmouseout = out;
+					function out(){
+					for(j=0;j<Oimg.length;j++){
+						Oimg[j].src = "image/general.png";
+					}
+
+					if (tag==1) {
+						// console.log("out："+cur);	
+						for(j=0;j<=cur;j++){
+							if(cur<2){
+								Oimg[j].src = "image/bad.png";
+							}
+							else{
+								Oimg[j].src = "image/good.png"
+							}
+						}
+					}
+				}
+
+				
+			}
+	}
+	</script>
+</html>
