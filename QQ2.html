@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head lang="en">
+		<meta charset="utf-8">
+		<title>判断QQ是否通过</title>
+	</head>
+	<body>
+		<span>请输入QQ号码：</span>
+		<input type="text" id="txt">
+		<input type="button" value="确定" id="but">
+		<ol>
+			<li>请输入QQ号码</li>
+			<li>输入的是正整数</li>
+			<li>不能以0开头</li>
+			<li>请输入5位以上10位以内的数字</li>
+		</ol>
+	</body>
+	<script>
+		window.onload = function(){
+			var Otxt = document.getElementById('txt');
+			var Obut = document.getElementById('but');
+			var flag = 1;
+			Obut.onclick = function(){
+				if (Otxt.value.length>=5 && Otxt.value.length<=10) {
+				for (var i = 0; i < Otxt.value.length; i++) {
+					if(Otxt.value.charCodeAt(i)<49 || Otxt.value.charCodeAt(i)>57){
+						alert("请输入合法数字");
+						flag = 0;
+						break;
+					}
+					if (i==Otxt.value.length-1) {flag = 1;}
+				}
+				if (flag) {
+						alert("输入有效");
+					}
+			}
+			else{
+				alert("请输入合法数字");
+			}
+		}
+	}
+	</script>
+</html>
