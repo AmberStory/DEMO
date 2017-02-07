@@ -1,0 +1,26 @@
+<!doctype>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>DOM节点的应用</title>
+	</head>
+	<body>
+		<ul id="ul1" style="border: 1px solid red;margin-top: 10px;" class="ul1">
+			<li>111</li><!--计算以下节点-->
+			<li>222</li>
+			<li>333</li>
+		</ul>
+	</body>
+	<script>
+	 // window.onload = function() {
+	 // 	var Oul = document.getElementById('ul1');
+		// alert(Oul.childNodes.length);
+	 // }
+		var Oul = document.getElementById('ul1');
+		alert(Oul.childNodes.length);
+		alert(Oul.childNodes[2].nodeType);
+		alert(Oul.attributes.length);
+		alert(Oul.attributes[2].nodeType);
+	</script>
+</html>
