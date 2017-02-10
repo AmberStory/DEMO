@@ -1,0 +1,142 @@
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		text-align: center;
+	}
+	#span1 {
+		width: 700px;
+		height: 30px;
+		position: absolute;
+		top: -50px;
+
+	}
+		#content{
+			width: 700px;
+			height: 500px;
+			/*border: 2px solid green;*/
+			position: relative;
+			margin:100px auto;
+			/*text-align: center;*/
+		}
+		.span{
+			width: 50px;
+			height: 30px;
+			line-height: 30px;
+			background-color: #e1f1f1;
+			text-decoration: none;
+			position: absolute;
+			top: 225px;
+			filter: alpha(opacity:40);
+			opacity: 0.4;
+			cursor:pointer;
+
+		}
+		
+		.span:hover{
+			filter: alpha(opacity:70);
+			opacity: 0.7;
+		}
+	
+		#prev{
+			position: absolute;
+			left:  10px;
+		}
+		#next{
+			position: absolute;
+			right: 10px;
+			
+		}
+		#img{
+			height: 500px;
+			width: 700px;
+		}
+		#p1{
+			width: 700px;
+			height: 30px;
+			line-height: 30px;
+			background-color: black;
+			position: absolute;
+			top: -16px;
+			color:#fff;
+
+		}
+		#p2{
+			width: 700px;
+			height: 30px;
+			line-height: 30px;
+			background-color: black;
+			position: absolute;
+			bottom: -16px;
+			color:#fff;
+		}
+	#but1{
+		/*margin-top: 80px;*/
+		position: absolute;
+		top: -80px;
+		left: 280px;
+	}	
+	#but2{
+		/*margin-top: 80px;*/
+		position: absolute;
+		top: -80px;
+		right: 280px;
+	}
+	/*.divto4{
+		width: 20px;
+		height: 20px;
+		margin-top: -50px
+		background: red;
+		float: left;
+		z-index: 2;
+	}*/
+	#divspan{
+		width:100%;
+		height: 50px;
+		position: absolute;
+		bottom: 30px;
+	}
+	#divspan .list{
+
+		width:120px;
+		height: 30px;
+		margin: 5px auto;
+	}
+	.divpoint{
+		
+		float: left;
+		width: 20px;
+		height: 20px;
+		background-color: #d1d1d1;
+		margin-right: 10px;
+		/*filter:alpha(opacity:40);
+		opacity: 0.4;*/
+		cursor:pointer;
+		border-radius: 10px;
+	}
+	/*.divpoint:hover{
+		background:red;
+	}*/
+	.list img{
+		height: 50px;
+		width: 80px;
+		position: absolute;
+		margin-top: -60px;
+		margin-left: -30px;
+		background: url('image/1.jpg');
+		display: none;
+	}
+	.list p{
+		height: 0px;
+		width: 0px;
+		margin-top: -10px;
+		margin-left: 5px;
+		display: none;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-top: 6px solid #fff;
+
+	}
+	</style>
