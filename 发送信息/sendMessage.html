@@ -1,0 +1,124 @@
+<!doctype>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+		<title>SendMessage</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			#div1{
+				width: 300px;
+				height: 300px;
+				border: 1px solid black;
+				margin-bottom: 2px;
+				background: #f1f1f1;
+				font-size: 2px;
+				overflow: auto;
+				/*vertical-align: middle;*/
+				/*line-height: 10px;*/
+				
+			}
+			#div2{
+				height: 40px;
+				/*vertical-align: middle;*/
+			}
+			#text1{
+				width: 200px;
+				height: 23px;
+				border:1px solid red;
+				/*display: inline-block;*/
+				margin-top: 5px;
+				/*vertical-align: middle;	*/
+
+			}
+			.img1{
+				vertical-align: middle;		/*使用受限*/
+				/*display: inline-block;*/
+				/*margin-top: -1px;*/
+			}
+			.p1{
+				text-align: left;
+				line-height: 21px;
+				/*line-height: 30px;*/
+				/*vertical-align: text-top;*/
+			}
+			.p2{
+				text-align: right;
+				line-height: 21px;
+				/*vertical-align: text-top;*/
+			}
+		/*	#but1{
+				display: inline-block;
+			}*/
+		</style>
+	</head>
+
+	<script type="text/javascript">
+		window.onload = function(){
+			var Otext = document.getElementById('text1');
+			var Obut = document.getElementById('but1');
+			var Ospan = document.getElementById('span1');
+			var Odiv1 = document.getElementById('div1');
+			var Odiv2 = document.getElementById('div2');
+			var Oimg1 = document.getElementById('img1');
+			var a=1;
+
+			Otext.focus();
+			Obut.onclick = SendMessage;
+			Oimg1.onclick = function(){
+				Otext.focus();
+				if (a==1) {
+				Oimg1.src = 'image/google.png';
+				a=2;
+				}
+				else{
+					Oimg1.src = 'image/baidu.png';
+					a=1;
+				}
+			}
+
+			//键盘控制
+			Otext.onkeyup=function(ev){
+				var ev=ev||event;
+				if(ev.keyCode==13){
+					SendMessage();
+					Otext.focus();
+				}
+			}
+
+			function SendMessage(){
+				if (a==1) {
+					if (Otext.value=='') {
+						alert("请输入");
+						}
+						else{
+							Odiv1.innerHTML += " <p class=\"p1\"><img class='img1' src='image/baidu.png'>：" + Otext.value+"</p>";
+							Otext.focus();
+					}
+				}
+				else{
+					if (Otext.value=='') {
+						alert("请输入");
+						}
+						else{
+							Odiv1.innerHTML += " <p class=\"p2\"><img class='img1' src='image/google.png'>：" + Otext.value+"</p>";
+							Otext.focus();
+					}
+				}
+				Otext.value = '';
+			}
+		}
+	</script>
+
+	<body>
+		<!-- <span id="span1">头像</span> -->
+		<div id="div1"></div>
+		<div id="div2">
+		<img class="img1" id="img1" src="image/baidu.png" align="bottom">
+		<input id="text1" type="text">
+		<input id="but1" type="button" value="发送">
+		</div>
+	</body>
+</html>
