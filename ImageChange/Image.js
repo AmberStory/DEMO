@@ -19,7 +19,7 @@
 		img();
 		Obut1.onclick = function(){
 			OffOn = true;
-			Ospan1.innerHTML = "图片可以循环播放cishu";
+			Ospan1.innerHTML = "3333图片可以循环播放cishu";
 		}
 		Obut2.onclick = function(){
 			OffOn = false;
