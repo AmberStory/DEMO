@@ -23,7 +23,7 @@
 		}
 		Obut2.onclick = function(){
 			OffOn = false;
-			Ospan1.innerHTML = "图片可以顺序播放";
+			Ospan1.innerHTML = "图片可以顺序播放bofang";
 		}
 		Onext.onclick = function(){
 			num++;
